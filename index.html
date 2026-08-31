@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untouched Earth · Gardens of origin</title>
+  <!-- Fonts & minimal reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --clr-earth: #3a2c1b;
+      --clr-clay: #7d5f41;
+      --clr-sage: #7b8f6b;
+      --clr-moss: #3f5a3a;
+      --clr-cream: #f6efe6;
+      --clr-stone: #d9d0c4;
+      --clr-white: #fcf9f5;
+      --clr-text: #1f1a14;
+      --clr-muted: #5f5346;
+      --ff-display: 'STIX Two Text', serif;
+      --ff-body: 'Inter', sans-serif;
+      --measure: 72ch;
+      --shadow-card: 0 12px 32px -12px rgba(30, 20, 10, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+    body {
+      background: var(--clr-white);
+      color: var(--clr-text);
+      font-family: var(--ff-body);
+      line-height: 1.65;
+      font-weight: 350;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--clr-moss); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--clr-clay); }
+    img { max-width: 100%; display: block; height: auto; }
+    .wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.8rem; }
+    /* ---------- brand / nav ---------- */
+    .site-header {
+      padding: 2rem 0 1.2rem;
+      border-bottom: 1px solid var(--clr-stone);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem 0.6rem;
+      flex-wrap: wrap;
+    }
+    .brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .brand-name i { font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-muted);
+      border-left: 2px solid var(--clr-sage);
+      padding-left: 0.8rem;
+      font-weight: 400;
+    }
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+    }
+    .nav-primary a { color: var(--clr-text); border-bottom: 2px solid transparent; padding-bottom: 0.2rem; }
+    .nav-primary a:hover { border-bottom-color: var(--clr-sage); color: var(--clr-earth); }
+    .nav-extra { display: flex; gap: 1.2rem; align-items: center; }
+    .search-icon { font-size: 1.2rem; opacity: 0.7; cursor: default; }
+    /* ---------- homepage architecture: editorial field guide ---------- */
+    .hero-field {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      padding: 3.2rem 0 2.8rem;
+      align-items: center;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .hero-field h1 {
+      font-family: var(--ff-display);
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .hero-field h1 span { display: block; font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .hero-field p { font-size: 1.15rem; color: var(--clr-muted); max-width: 40ch; margin-top: 0.6rem; }
+    .hero-img {
+      background: var(--clr-stone);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      aspect-ratio: 4/3;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23d9d0c4"/><circle cx="120" cy="120" r="60" fill="%237b8f6b" opacity="0.3"/><circle cx="290" cy="190" r="90" fill="%233f5a3a" opacity="0.25"/><circle cx="60" cy="230" r="40" fill="%237d5f41" opacity="0.2"/><path d="M180 80 L220 130 L190 160 L140 130 L180 80" fill="%233a2c1b" opacity="0.2"/></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* knowledge pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+      padding: 3.2rem 0 2.8rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .pillar-card {
+      background: var(--clr-cream);
+      padding: 2rem 1.8rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--clr-sage);
+      transition: background var(--transition);
+    }
+    .pillar-card:hover { background: #ede4d9; }
+    .pillar-card h3 { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; }
+    .pillar-card p { color: var(--clr-muted); font-size: 0.95rem; margin: 0.5rem 0 0.8rem; }
+    .pillar-meta { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-clay); }
+    /* feature articles — horizontal story cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.2rem;
+      padding: 3.2rem 0 2.8rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--clr-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition);
+    }
+    .story-card:hover { transform: translateY(-4px); }
+    .story-card .img-wrap {
+      background: var(--clr-stone);
+      aspect-ratio: 16/9;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225"><rect width="400" height="225" fill="%23d9d0c4"/><circle cx="180" cy="110" r="50" fill="%237b8f6b" opacity="0.3"/><circle cx="300" cy="160" r="70" fill="%233f5a3a" opacity="0.2"/><path d="M80 180 L160 130 L220 170 L160 210 L80 180" fill="%233a2c1b" opacity="0.15"/></svg>');
+      background-size: cover;
+    }
+    .story-card .content { padding: 1.8rem 2rem 2rem; }
+    .story-card .cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-sage); font-weight: 600; }
+    .story-card h2 { font-family: var(--ff-display); font-size: 1.6rem; line-height: 1.2; margin: 0.4rem 0 0.3rem; }
+    .story-card p { color: var(--clr-muted); font-size: 0.95rem; }
+    .story-card .byline { font-size: 0.8rem; color: var(--clr-muted); margin-top: 0.8rem; border-top: 1px solid var(--clr-stone); padding-top: 0.8rem; }
+    /* infographic + topic explorer */
+    .infographic-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      padding: 3.2rem 0 2.8rem;
+      border-bottom: 1px solid var(--clr-stone);
+      align-items: center;
+    }
+    .infographic-box {
+      background: var(--clr-cream);
+      border-radius: var(--radius-md);
+      padding: 1.8rem 2rem;
+      border: 1px solid var(--clr-stone);
+    }
+    .infographic-box h3 { font-family: var(--ff-display); font-weight: 600; font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .infographic-box ul { list-style: none; margin-top: 0.8rem; }
+    .infographic-box li { padding: 0.5rem 0; border-bottom: 1px dashed var(--clr-stone); display: flex; gap: 0.8rem; align-items: baseline; font-size: 0.95rem; }
+    .infographic-box li span { font-weight: 600; color: var(--clr-moss); min-width: 2.2rem; }
+    .infographic-visual {
+      background: var(--clr-stone);
+      border-radius: var(--radius-md);
+      aspect-ratio: 4/3;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23d9d0c4"/><rect x="60" y="100" width="40" height="150" fill="%233f5a3a" opacity="0.5"/><rect x="130" y="70" width="40" height="180" fill="%237b8f6b" opacity="0.5"/><rect x="200" y="130" width="40" height="120" fill="%237d5f41" opacity="0.4"/><rect x="270" y="40" width="40" height="210" fill="%233a2c1b" opacity="0.4"/><text x="70" y="280" font-family="Inter" font-size="12" fill="%233a2c1b">compost</text><text x="140" y="280" font-family="Inter" font-size="12" fill="%233a2c1b">sowing</text><text x="210" y="280" font-family="Inter" font-size="12" fill="%233a2c1b">perennials</text><text x="280" y="280" font-family="Inter" font-size="12" fill="%233a2c1b">harvest</text></svg>');
+      background-size: cover;
+      box-shadow: var(--shadow-card);
+    }
+    /* latest field notes (compact rows) */
+    .field-notes {
+      padding: 3.2rem 0 2.8rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .field-notes h2 { font-family: var(--ff-display); font-size: 2rem; font-weight: 600; margin-bottom: 1.8rem; letter-spacing: -0.01em; }
+    .note-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .note-item {
+      border-bottom: 1px solid var(--clr-stone);
+      padding-bottom: 1.2rem;
+    }
+    .note-item .cat { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--clr-sage); font-weight: 600; }
+    .note-item h3 { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; margin: 0.2rem 0 0.2rem; }
+    .note-item p { font-size: 0.9rem; color: var(--clr-muted); }
+    /* footer — earthy & editorial */
+    .site-footer {
+      margin-top: 3rem;
+      padding: 3.2rem 0 2rem;
+      border-top: 2px solid var(--clr-earth);
+      background: var(--clr-cream);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { color: var(--clr-muted); max-width: 28ch; font-size: 0.9rem; margin-top: 0.4rem; }
+    .footer-col h4 { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-earth); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.9rem; color: var(--clr-muted); padding: 0.25rem 0; }
+    .footer-col a:hover { color: var(--clr-moss); }
+    .footer-legal { margin-top: 2.5rem; border-top: 1px solid var(--clr-stone); padding-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; justify-content: space-between; font-size: 0.8rem; color: var(--clr-muted); }
+    .footer-legal a { color: var(--clr-muted); }
+    .footer-legal a:hover { color: var(--clr-earth); }
+    /* mobile */
+    @media (max-width: 860px) {
+      .hero-field { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .infographic-section { grid-template-columns: 1fr; }
+      .note-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-primary { gap: 1rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+    }
+    @media (max-width: 500px) {
+      .wrapper { padding: 0 1rem; }
+      .hero-field h1 { font-size: 2.2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    /* utility */
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--clr-earth);
+      padding: 0.5rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--clr-earth);
+      transition: all var(--transition);
+      margin-top: 0.8rem;
+    }
+    .btn-outline:hover { background: var(--clr-earth); color: var(--clr-white); border-color: var(--clr-earth); }
+    .text-sage { color: var(--clr-sage); }
+    .border-bottom { border-bottom: 1px solid var(--clr-stone); padding-bottom: 0.4rem; }
+    /* hidden pages (for completeness) — we keep them in footer */
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-name">Untouched <i>Earth</i></span>
+        <span class="tagline">Gardens of origin</span>
+      </div>
+      <nav class="nav-primary">
+         <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li> 
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+      </nav>
+    </header>
+
+    <!-- HERO: editorial field guide -->
+    <section class="hero-field">
+      <div>
+        <h1>Rooted in place,<span>grown with intention.</span></h1>
+        <p>Untouched Earth is a living library for gardeners who tend with patience, observe with care, and grow in harmony with the land.</p>
+        <a href="#" class="btn-outline">Explore the garden</a>
+      </div>
+      <div class="hero-img" role="img" aria-label="Aerial view of a lush garden with winding paths and native plantings"></div>
+    </section>
+
+    <!-- PILLARS: knowledge hubs -->
+    <section class="pillars">
+      <article class="pillar-card">
+        <div class="pillar-meta">Soil · foundation</div>
+        <h3>Living soil</h3>
+        <p>From compost to mycelium — how to build a soil food web that sustains your garden for decades.</p>
+        <a href="#" style="font-weight: 500;">Read guide →</a>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-meta">Seeds · heritage</div>
+        <h3>Open-pollinated</h3>
+        <p>Preserving genetic diversity through heirloom varieties and seed-saving traditions that connect us to the past.</p>
+        <a href="#" style="font-weight: 500;">Explore varieties →</a>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-meta">Perennials · ecology</div>
+        <h3>Resilient landscapes</h3>
+        <p>Designing with native perennials, food forests, and layered plant communities that thrive without constant intervention.</p>
+        <a href="#" style="font-weight: 500;">Learn more →</a>
+      </article>
+    </section>
+
+    <!-- FEATURED STORIES (horizontal card + compact) -->
+    <section class="feature-grid">
+      <article class="story-card">
+        <div class="img-wrap" role="img" aria-label="A gardener's hands cupping dark, crumbly compost"></div>
+        <div class="content">
+          <div class="cat">Soil · long read</div>
+          <h2>The art of compost: turning waste into wealth</h2>
+          <p>Beyond the pile — how to balance carbon, nitrogen, moisture, and life to create the finest soil amendment nature can offer.</p>
+          <div class="byline">By Juniper Hale · 12 min read</div>
+        </div>
+      </article>
+      <div style="display: flex; flex-direction: column; gap: 1.8rem;">
+        <div style="background: var(--clr-cream); padding: 1.5rem 1.8rem; border-radius: var(--radius-md); border-right: 4px solid var(--clr-clay);">
+          <div class="cat">Design</div>
+          <h3 style="font-family: var(--ff-display); font-size: 1.2rem;">Four-season garden structure</h3>
+          <p style="font-size:0.9rem; color:var(--clr-muted);">Using woody perennials, evergreen backbones, and winter interest.</p>
+          <a href="#" style="font-weight:500;">Read →</a>
+        </div>
+        <div style="background: var(--clr-cream); padding: 1.5rem 1.8rem; border-radius: var(--radius-md); border-right: 4px solid var(--clr-sage);">
+          <div class="cat">Propagation</div>
+          <h3 style="font-family: var(--ff-display); font-size: 1.2rem;">Rooting cuttings like a pro</h3>
+          <p style="font-size:0.9rem; color:var(--clr-muted);">Simple techniques for woody and herbaceous plants.</p>
+          <a href="#" style="font-weight:500;">Read →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFOGRAPHIC + TOPIC EXPLORER -->
+    <section class="infographic-section">
+      <div class="infographic-box">
+        <h3>🌿 Seasonal rhythm</h3>
+        <p style="color:var(--clr-muted); font-size:0.95rem;">A visual guide to the gardener’s year — when to sow, plant, tend, and harvest.</p>
+        <ul>
+          <li><span>🌱</span> Early spring · soil prep & hardy greens</li>
+          <li><span>🌻</span> Late spring · transplant & direct sow</li>
+          <li><span>☀️</span> Summer · water, mulch, and trellis</li>
+          <li><span>🍂</span> Autumn · cover crops & garlic planting</li>
+          <li><span>❄️</span> Winter · tool care & seed dreaming</li>
+        </ul>
+      </div>
+      <div class="infographic-visual" role="img" aria-label="Infographic showing seasonal gardening tasks"></div>
+    </section>
+
+    <!-- FIELD NOTES (latest articles compact) -->
+    <section class="field-notes">
+      <h2>Latest field notes</h2>
+      <div class="note-row">
+        <div class="note-item">
+          <div class="cat">Pests · integrated management</div>
+          <h3>Attracting beneficial insects</h3>
+          <p>Planting for hoverflies, lacewings, and parasitic wasps.</p>
+          <span style="font-size:0.75rem; color:var(--clr-muted);">6 min · Iris Blackwood</span>
+        </div>
+        <div class="note-item">
+          <div class="cat">Water · conservation</div>
+          <h3>Olla irrigation: ancient wisdom</h3>
+          <p>Buried clay pots that water your plants at the root zone.</p>
+          <span style="font-size:0.75rem; color:var(--clr-muted);">4 min · Elias Grove</span>
+        </div>
+        <div class="note-item">
+          <div class="cat">Harvest · preserving</div>
+          <h3>Fermentation for gardeners</h3>
+          <p>Turning surplus vegetables into probiotic foods.</p>
+          <span style="font-size:0.75rem; color:var(--clr-muted);">8 min · Maya Birch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG ARCHIVE / CATEGORY DISCOVERY (inline) -->
+    <div style="padding: 1.2rem 0 2rem; border-bottom: 1px solid var(--clr-stone); display: flex; flex-wrap: wrap; gap: 1.8rem 3rem; align-items: baseline;">
+      <span style="font-weight: 600; letter-spacing:0.02em;">Explore by topic</span>
+      <a href="#" style="font-size:0.9rem;">Soil health</a>
+      <a href="#" style="font-size:0.9rem;">Heirloom seeds</a>
+      <a href="#" style="font-size:0.9rem;">Perennial design</a>
+      <a href="#" style="font-size:0.9rem;">Compost</a>
+      <a href="#" style="font-size:0.9rem;">Waterwise</a>
+      <a href="#" style="font-size:0.9rem;">Pollinators</a>
+      <a href="#" style="font-size:0.9rem;">Harvest kitchen</a>
+      <a href="#" style="font-size:0.9rem;">Tool shed</a>
+    </div>
+  </div>
+
+  <!-- FOOTER (complete authority footer) -->
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Untouched <i>Earth</i></div>
+          <p>Gardens of origin — a digital publication for the thoughtful gardener. We explore traditional knowledge, ecological design, and the quiet art of tending.</p>
+          <p style="margin-top:0.6rem; font-size:0.8rem;">© 2026 Untouched Earth · all rights reserved</p>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <a href="#">Field guide</a>
+          <a href="#">Stories</a>
+          <a href="#">Library</a>
+          <a href="#">Archive</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="#">Categories</a>
+          <a href="#">Authors</a>
+          <a href="#">FAQ</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Editorial policy</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookie policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+      <!-- legal row -->
+      <div class="footer-legal">
+        <span>Untouched Earth is an independent authority on regenerative gardening and horticultural heritage.</span>
+        <span>
+          <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

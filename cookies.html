@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untouched Earth · Cookies Policy</title>
+  <!-- Fonts & minimal reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --clr-earth: #3a2c1b;
+      --clr-clay: #7d5f41;
+      --clr-sage: #7b8f6b;
+      --clr-moss: #3f5a3a;
+      --clr-cream: #f6efe6;
+      --clr-stone: #d9d0c4;
+      --clr-white: #fcf9f5;
+      --clr-text: #1f1a14;
+      --clr-muted: #5f5346;
+      --ff-display: 'STIX Two Text', serif;
+      --ff-body: 'Inter', sans-serif;
+      --measure: 72ch;
+      --shadow-card: 0 12px 32px -12px rgba(30, 20, 10, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+    body {
+      background: var(--clr-white);
+      color: var(--clr-text);
+      font-family: var(--ff-body);
+      line-height: 1.65;
+      font-weight: 350;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--clr-moss); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--clr-clay); }
+    img { max-width: 100%; display: block; height: auto; }
+    .wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.8rem; }
+    /* ---------- brand / nav ---------- */
+    .site-header {
+      padding: 2rem 0 1.2rem;
+      border-bottom: 1px solid var(--clr-stone);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem 0.6rem;
+      flex-wrap: wrap;
+    }
+    .brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .brand-name i { font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-muted);
+      border-left: 2px solid var(--clr-sage);
+      padding-left: 0.8rem;
+      font-weight: 400;
+    }
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      flex-wrap: wrap;
+    }
+    .nav-primary a { color: var(--clr-text); border-bottom: 2px solid transparent; padding-bottom: 0.2rem; }
+    .nav-primary a:hover { border-bottom-color: var(--clr-sage); color: var(--clr-earth); }
+    .nav-primary a[aria-current="page"] { border-bottom-color: var(--clr-sage); }
+    /* ---------- page specific (cookies) ---------- */
+    .page-header {
+      padding: 2.8rem 0 1.5rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .page-header h1 {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .page-header h1 i { font-style: italic; color: var(--clr-sage); font-weight: 400; }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--clr-muted);
+      max-width: 60ch;
+      margin-top: 0.4rem;
+    }
+    .cookies-content {
+      padding: 2.8rem 0 3.2rem;
+      max-width: 80ch;
+    }
+    .cookies-content h2 {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2rem 0 0.6rem;
+      color: var(--clr-earth);
+    }
+    .cookies-content h2:first-of-type { margin-top: 0; }
+    .cookies-content p {
+      color: var(--clr-muted);
+      margin: 0.8rem 0 1.2rem;
+    }
+    .cookies-content ul {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+      color: var(--clr-muted);
+    }
+    .cookies-content li {
+      margin-bottom: 0.3rem;
+    }
+    .cookies-content .highlight-box {
+      background: var(--clr-cream);
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--clr-sage);
+      margin: 1.8rem 0;
+    }
+    .cookies-content .highlight-box p {
+      margin: 0.2rem 0;
+    }
+    .cookies-content .signature {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--clr-sage);
+      border-top: 1px solid var(--clr-stone);
+      padding-top: 1.2rem;
+      margin-top: 2.2rem;
+    }
+    .cookies-content .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--clr-earth);
+      padding: 0.5rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--clr-earth);
+      transition: all var(--transition);
+      margin-top: 0.8rem;
+    }
+    .cookies-content .btn-outline:hover { background: var(--clr-earth); color: var(--clr-white); border-color: var(--clr-earth); }
+    /* table / preference style */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .cookie-table th {
+      text-align: left;
+      background: var(--clr-cream);
+      padding: 0.7rem 1rem;
+      font-weight: 600;
+      color: var(--clr-earth);
+      border-bottom: 2px solid var(--clr-stone);
+    }
+    .cookie-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--clr-stone);
+      color: var(--clr-muted);
+    }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .badge-essential {
+      display: inline-block;
+      background: var(--clr-sage);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+    }
+    .badge-analytics {
+      display: inline-block;
+      background: var(--clr-clay);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+    }
+    .badge-functional {
+      display: inline-block;
+      background: #8f7a5c;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+    }
+    /* footer — earthy & editorial */
+    .site-footer {
+      margin-top: 3rem;
+      padding: 3.2rem 0 2rem;
+      border-top: 2px solid var(--clr-earth);
+      background: var(--clr-cream);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { color: var(--clr-muted); max-width: 28ch; font-size: 0.9rem; margin-top: 0.4rem; }
+    .footer-col h4 { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-earth); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.9rem; color: var(--clr-muted); padding: 0.25rem 0; }
+    .footer-col a:hover { color: var(--clr-moss); }
+    .footer-legal { margin-top: 2.5rem; border-top: 1px solid var(--clr-stone); padding-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; justify-content: space-between; font-size: 0.8rem; color: var(--clr-muted); }
+    .footer-legal a { color: var(--clr-muted); }
+    .footer-legal a:hover { color: var(--clr-earth); }
+    /* mobile */
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-primary { gap: 1rem; }
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .cookies-content { max-width: 100%; }
+    }
+    @media (max-width: 500px) {
+      .wrapper { padding: 0 1rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .cookie-table, .cookie-table tbody, .cookie-table tr, .cookie-table td, .cookie-table th {
+        display: block;
+        width: 100%;
+      }
+      .cookie-table tr { margin-bottom: 1rem; border-bottom: 2px solid var(--clr-stone); }
+      .cookie-table td { border: none; padding: 0.3rem 0.5rem; }
+      .cookie-table th { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-name">Untouched <i>Earth</i></span>
+        <span class="tagline">Gardens of origin</span>
+      </div>
+      <nav class="nav-primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html" aria-current="page">Cookies Policy</a> 
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1>Cookies <i>Policy</i></h1>
+      <p>We use cookies sparingly and with respect for your privacy. This policy explains what we use, why, and how you can manage them.</p>
+    </section>
+
+    <!-- COOKIES CONTENT -->
+    <div class="cookies-content">
+      <h2>What are cookies?</h2>
+      <p>Cookies are small text files that are stored on your device when you visit a website. They help us remember your preferences, understand how you interact with our content, and keep the site running smoothly. We believe in minimal, transparent cookie use.</p>
+
+      <h2>How we use cookies</h2>
+      <p>We classify cookies into three categories, each with a specific purpose. We never use tracking cookies for advertising or cross-site profiling.</p>
+
+      <!-- table overview -->
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Type</th><th>Purpose</th><th>Duration</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-essential">Essential</span></td>
+            <td>Necessary for core functionality: session management, security, and accessibility.</td>
+            <td>Session / up to 1 year</td>
+            <td>session_id, csrf_token</td>
+          </tr>
+          <tr>
+            <td><span class="badge-functional">Functional</span></td>
+            <td>Remember user preferences, such as language or theme selection.</td>
+            <td>Up to 12 months</td>
+            <td>lang_pref, theme_mode</td>
+          </tr>
+          <tr>
+            <td><span class="badge-analytics">Analytics</span></td>
+            <td>Anonymized, privacy-first analytics to understand page usage and improve content.</td>
+            <td>Up to 26 months (aggregated)</td>
+            <td>visit_id (hashed)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <p><strong>Your choice matters.</strong> We do not use third-party marketing or ad-targeting cookies. You can manage your cookie preferences at any time through your browser settings. For more details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+
+      <h2>Managing cookies</h2>
+      <p>Most browsers allow you to control cookie settings. You can block or delete cookies at any time. However, disabling essential cookies may affect the functionality of our site. Below are links to manage cookies in popular browsers:</p>
+      <ul>
+        <li><a href="#">Google Chrome</a> – Settings > Privacy and security > Cookies and other site data</li>
+        <li><a href="#">Firefox</a> – Options > Privacy & Security > Cookies and Site Data</li>
+        <li><a href="#">Safari</a> – Preferences > Privacy > Cookies and website data</li>
+        <li><a href="#">Edge</a> – Settings > Cookies and site permissions</li>
+      </ul>
+      <p>If you prefer, you can also opt out of analytics cookies by adjusting your browser's Do Not Track settings or using privacy extensions.</p>
+
+      <h2>Third-party services</h2>
+      <p>We use a limited set of third-party services that may place their own cookies:</p>
+      <ul>
+        <li><strong>Webflow (hosting)</strong> – may set essential session cookies for site performance.</li>
+        <li><strong>Self-hosted analytics</strong> – we use a privacy-first analytics tool that does not use persistent cross-site identifiers.</li>
+      </ul>
+      <p>All third-party processors are GDPR-compliant and do not share data with additional parties.</p>
+
+      <h2>Updates to this policy</h2>
+      <p>We review our cookie usage regularly. Any changes to this policy will be posted here with a revised date. We encourage you to review this page periodically.</p>
+      <p><strong>Last revised:</strong> 24 August 2026</p>
+
+      <div class="signature">— with care, the Untouched Earth team</div>
+
+      <a href="contact.html" class="btn-outline">Questions? We're here to help</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Untouched <i>Earth</i></div>
+          <p>Gardens of origin — a digital publication for the thoughtful gardener. We explore traditional knowledge, ecological design, and the quiet art of tending.</p>
+          <p style="margin-top:0.6rem; font-size:0.8rem;">© 2026 Untouched Earth · all rights reserved</p>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <a href="#">Field guide</a>
+          <a href="#">Stories</a>
+          <a href="#">Library</a>
+          <a href="#">Archive</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="#">Categories</a>
+          <a href="#">Authors</a>
+          <a href="#">FAQ</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Editorial policy</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookie policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>Untouched Earth is an independent authority on regenerative gardening and horticultural heritage.</span>
+        <span>
+          <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untouched Earth · Disclaimer</title>
+  <!-- Fonts & minimal reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --clr-earth: #3a2c1b;
+      --clr-clay: #7d5f41;
+      --clr-sage: #7b8f6b;
+      --clr-moss: #3f5a3a;
+      --clr-cream: #f6efe6;
+      --clr-stone: #d9d0c4;
+      --clr-white: #fcf9f5;
+      --clr-text: #1f1a14;
+      --clr-muted: #5f5346;
+      --ff-display: 'STIX Two Text', serif;
+      --ff-body: 'Inter', sans-serif;
+      --measure: 72ch;
+      --shadow-card: 0 12px 32px -12px rgba(30, 20, 10, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+    body {
+      background: var(--clr-white);
+      color: var(--clr-text);
+      font-family: var(--ff-body);
+      line-height: 1.65;
+      font-weight: 350;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--clr-moss); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--clr-clay); }
+    img { max-width: 100%; display: block; height: auto; }
+    .wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.8rem; }
+    /* ---------- brand / nav ---------- */
+    .site-header {
+      padding: 2rem 0 1.2rem;
+      border-bottom: 1px solid var(--clr-stone);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem 0.6rem;
+      flex-wrap: wrap;
+    }
+    .brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .brand-name i { font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-muted);
+      border-left: 2px solid var(--clr-sage);
+      padding-left: 0.8rem;
+      font-weight: 400;
+    }
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      flex-wrap: wrap;
+    }
+    .nav-primary a { color: var(--clr-text); border-bottom: 2px solid transparent; padding-bottom: 0.2rem; }
+    .nav-primary a:hover { border-bottom-color: var(--clr-sage); color: var(--clr-earth); }
+    .nav-primary a[aria-current="page"] { border-bottom-color: var(--clr-sage); }
+    /* ---------- page specific (disclaimer) ---------- */
+    .page-header {
+      padding: 2.8rem 0 1.5rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .page-header h1 {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .page-header h1 i { font-style: italic; color: var(--clr-sage); font-weight: 400; }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--clr-muted);
+      max-width: 60ch;
+      margin-top: 0.4rem;
+    }
+    .disclaimer-content {
+      padding: 2.8rem 0 3.2rem;
+      max-width: 80ch;
+    }
+    .disclaimer-content h2 {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2rem 0 0.6rem;
+      color: var(--clr-earth);
+    }
+    .disclaimer-content h2:first-of-type { margin-top: 0; }
+    .disclaimer-content p {
+      color: var(--clr-muted);
+      margin: 0.8rem 0 1.2rem;
+    }
+    .disclaimer-content ul {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+      color: var(--clr-muted);
+    }
+    .disclaimer-content li {
+      margin-bottom: 0.3rem;
+    }
+    .disclaimer-content .highlight-box {
+      background: var(--clr-cream);
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--clr-sage);
+      margin: 1.8rem 0;
+    }
+    .disclaimer-content .highlight-box p {
+      margin: 0.2rem 0;
+    }
+    .disclaimer-content .signature {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--clr-sage);
+      border-top: 1px solid var(--clr-stone);
+      padding-top: 1.2rem;
+      margin-top: 2.2rem;
+    }
+    .disclaimer-content .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--clr-earth);
+      padding: 0.5rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--clr-earth);
+      transition: all var(--transition);
+      margin-top: 0.8rem;
+    }
+    .disclaimer-content .btn-outline:hover { background: var(--clr-earth); color: var(--clr-white); border-color: var(--clr-earth); }
+
+    .legal-badge {
+      display: inline-block;
+      background: var(--clr-clay);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.9rem;
+      border-radius: 50px;
+      margin-right: 0.5rem;
+    }
+    /* footer — earthy & editorial */
+    .site-footer {
+      margin-top: 3rem;
+      padding: 3.2rem 0 2rem;
+      border-top: 2px solid var(--clr-earth);
+      background: var(--clr-cream);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { color: var(--clr-muted); max-width: 28ch; font-size: 0.9rem; margin-top: 0.4rem; }
+    .footer-col h4 { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-earth); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.9rem; color: var(--clr-muted); padding: 0.25rem 0; }
+    .footer-col a:hover { color: var(--clr-moss); }
+    .footer-legal { margin-top: 2.5rem; border-top: 1px solid var(--clr-stone); padding-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; justify-content: space-between; font-size: 0.8rem; color: var(--clr-muted); }
+    .footer-legal a { color: var(--clr-muted); }
+    .footer-legal a:hover { color: var(--clr-earth); }
+    /* mobile */
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-primary { gap: 1rem; }
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .disclaimer-content { max-width: 100%; }
+    }
+    @media (max-width: 500px) {
+      .wrapper { padding: 0 1rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-name">Untouched <i>Earth</i></span>
+        <span class="tagline">Gardens of origin</span>
+      </div>
+      <nav class="nav-primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+        <a href="disclaimer.html" aria-current="page">Disclaimer</a>
+        <a href="categories.html">Categories</a>
+      </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1>Disclaimer <i>notice</i></h1>
+      <p>Untouched Earth is a garden of ideas. Please read this disclaimer carefully — it outlines the limits of our responsibility and your use of our content.</p>
+    </section>
+
+    <!-- DISCLAIMER CONTENT -->
+    <div class="disclaimer-content">
+      <h2>General information</h2>
+      <p>All content published on Untouched Earth is for <strong>informational and educational purposes</strong> only. We explore gardening, ecological design, and horticultural heritage with care, but we are not licensed agronomists, botanists, or medical professionals. Nothing on this site constitutes professional advice.</p>
+
+      <h2>Accuracy & completeness</h2>
+      <p>We strive to ensure that information is accurate, current, and reliable. However, gardening is influenced by countless variables — climate, soil, region, and individual practice. We cannot guarantee that every detail is error‑free or applicable to your specific situation. Always cross‑check with local resources and, where appropriate, consult a qualified expert.</p>
+
+      <div class="highlight-box">
+        <p><strong>📋 Editorial independence.</strong> Untouched Earth does not accept paid endorsements or sponsored content that compromises our editorial integrity. Any recommendations are based on genuine research and experience. Affiliate links, if present, are clearly marked.</p>
+      </div>
+
+      <h2>External links & third‑party content</h2>
+      <p>Our articles may include links to external websites, books, or resources. These are provided for your convenience and do not imply endorsement. We have no control over the content or practices of third‑party sites and accept no liability for any loss or damage arising from their use.</p>
+
+      <h2>No liability</h2>
+      <p>To the fullest extent permitted by law, Untouched Earth and its contributors are not liable for any direct, indirect, incidental, or consequential damages arising from the use of, or reliance on, the information provided on this website. Gardening involves physical activity, tools, and natural elements — please take appropriate safety precautions.</p>
+
+      <h2>Copyright & intellectual property</h2>
+      <p>All original text, images, and graphics on Untouched Earth are the property of the site or its contributors, unless otherwise noted. You may share excerpts with attribution, but reproduction in full without written consent is prohibited. We respect the intellectual property of others — if you believe any content infringes your rights, please <a href="contact.html">contact us</a>.</p>
+
+      <h2>Changes to this disclaimer</h2>
+      <p>We may update this disclaimer as our practices evolve or legal requirements change. The latest version will always be available here, with the revision date noted below. We encourage you to review it from time to time.</p>
+      <p><strong>Last revised:</strong> 24 August 2026</p>
+
+      <div class="signature">— with respect, the Untouched Earth team</div>
+
+      <a href="contact.html" class="btn-outline">Questions? We're here to help</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Untouched <i>Earth</i></div>
+          <p>Gardens of origin — a digital publication for the thoughtful gardener. We explore traditional knowledge, ecological design, and the quiet art of tending.</p>
+          <p style="margin-top:0.6rem; font-size:0.8rem;">© 2026 Untouched Earth · all rights reserved</p>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <a href="#">Field guide</a>
+          <a href="#">Stories</a>
+          <a href="#">Library</a>
+          <a href="#">Archive</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="#">Categories</a>
+          <a href="#">Authors</a>
+          <a href="#">FAQ</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Editorial policy</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookie policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>Untouched Earth is an independent authority on regenerative gardening and horticultural heritage.</span>
+        <span>
+          <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

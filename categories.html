@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories · Untouched Earth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --clr-earth: #3a2c1b;
+      --clr-clay: #7d5f41;
+      --clr-sage: #7b8f6b;
+      --clr-moss: #3f5a3a;
+      --clr-cream: #f6efe6;
+      --clr-stone: #d9d0c4;
+      --clr-white: #fcf9f5;
+      --clr-text: #1f1a14;
+      --clr-muted: #5f5346;
+      --ff-display: 'STIX Two Text', serif;
+      --ff-body: 'Inter', sans-serif;
+      --shadow-card: 0 12px 32px -12px rgba(30, 20, 10, 0.12);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+    body {
+      background: var(--clr-white);
+      color: var(--clr-text);
+      font-family: var(--ff-body);
+      line-height: 1.65;
+      font-weight: 350;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--clr-moss); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--clr-clay); }
+    img { max-width: 100%; display: block; height: auto; }
+    .wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.8rem; }
+    
+    /* header */
+    .site-header {
+      padding: 2rem 0 1.2rem;
+      border-bottom: 1px solid var(--clr-stone);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem 0.6rem;
+      flex-wrap: wrap;
+    }
+    .brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .brand-name i { font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--clr-muted);
+      border-left: 2px solid var(--clr-sage);
+      padding-left: 0.8rem;
+      font-weight: 400;
+    }
+    .nav-primary {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+    }
+    .nav-primary a { color: var(--clr-text); border-bottom: 2px solid transparent; padding-bottom: 0.2rem; }
+    .nav-primary a:hover { border-bottom-color: var(--clr-sage); color: var(--clr-earth); }
+    .nav-primary li { list-style: none; }
+    
+    /* categories hero */
+    .categories-hero {
+      padding: 3.2rem 0 2.8rem;
+      border-bottom: 1px solid var(--clr-stone);
+    }
+    .categories-hero h1 {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--clr-earth);
+    }
+    .categories-hero h1 span { font-style: italic; font-weight: 400; color: var(--clr-sage); }
+    .categories-hero p {
+      font-size: 1.1rem;
+      color: var(--clr-muted);
+      max-width: 60ch;
+      margin-top: 0.6rem;
+    }
+    
+    /* category grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 2.8rem 0 3.2rem;
+    }
+    .category-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 1.8rem 1.6rem 1.8rem;
+      border: 1px solid var(--clr-stone);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -16px rgba(30, 20, 10, 0.18);
+      border-color: var(--clr-sage);
+    }
+    .category-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      color: var(--clr-clay);
+    }
+    .category-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--clr-earth);
+      margin-bottom: 0.3rem;
+    }
+    .category-card p {
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+      margin-bottom: 0.6rem;
+    }
+    .category-meta {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--clr-sage);
+      border-top: 1px solid var(--clr-cream);
+      padding-top: 0.8rem;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .category-meta a {
+      font-weight: 500;
+      color: var(--clr-moss);
+      border-bottom: 1px solid transparent;
+    }
+    .category-meta a:hover { border-bottom-color: var(--clr-sage); }
+    .pill {
+      background: var(--clr-cream);
+      padding: 0.1rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      color: var(--clr-muted);
+    }
+    
+    /* featured category (full width) */
+    .featured-category {
+      background: var(--clr-cream);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.4rem;
+      margin: 0 0 1.2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 8px solid var(--clr-clay);
+    }
+    .featured-category .fc-text h3 {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--clr-earth);
+    }
+    .featured-category .fc-text p {
+      color: var(--clr-muted);
+      max-width: 50ch;
+    }
+    .featured-category .fc-link {
+      background: var(--clr-earth);
+      color: var(--clr-white);
+      padding: 0.6rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+    .featured-category .fc-link:hover {
+      background: var(--clr-moss);
+      color: white;
+    }
+    
+    /* footer */
+    .site-footer {
+      margin-top: 1rem;
+      padding: 3.2rem 0 2rem;
+      border-top: 2px solid var(--clr-earth);
+      background: var(--clr-cream);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .footer-brand .brand-name { font-size: 1.6rem; }
+    .footer-brand p { color: var(--clr-muted); max-width: 28ch; font-size: 0.9rem; margin-top: 0.4rem; }
+    .footer-col h4 { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-earth); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: 0.9rem; color: var(--clr-muted); padding: 0.25rem 0; }
+    .footer-col a:hover { color: var(--clr-moss); }
+    .footer-legal {
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--clr-stone);
+      padding-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2rem;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+    }
+    .footer-legal a { color: var(--clr-muted); }
+    .footer-legal a:hover { color: var(--clr-earth); }
+    
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-primary { gap: 1rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .featured-category { flex-direction: column; align-items: start; gap: 1rem; }
+    }
+    @media (max-width: 500px) {
+      .wrapper { padding: 0 1rem; }
+      .categories-hero h1 { font-size: 2.2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-name">Untouched <i>Earth</i></span>
+        <span class="tagline">Gardens of origin</span>
+      </div>
+      <nav class="nav-primary">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="categories.html" style="border-bottom-color: var(--clr-sage);">Categories</a></li>
+      </nav>
+    </header>
+
+    <!-- categories hero -->
+    <section class="categories-hero">
+      <h1>Garden <span>Categories</span></h1>
+      <p>Wander through our thematic beds — each category holds stories, wisdom, and practical notes for the earth-minded gardener.</p>
+    </section>
+
+    <!-- featured category (highlight) -->
+    <div class="featured-category">
+      <div class="fc-text">
+        <h3>🌱 Heritage Seeds</h3>
+        <p>Preserving heirloom varieties, seed saving traditions, and the stories behind plants that have fed generations.</p>
+      </div>
+      <a href="#" class="fc-link">Explore →</a>
+    </div>
+
+    <!-- category grid -->
+    <div class="category-grid">
+      <!-- card 1 -->
+      <div class="category-card">
+        <div class="category-icon">🌿</div>
+        <h3>Permaculture</h3>
+        <p>Design principles, forest gardens, and regenerative systems that work with nature, not against it.</p>
+        <div class="category-meta">
+          <span class="pill">12 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="category-card">
+        <div class="category-icon">🌻</div>
+        <h3>Wildflowers & Pollinators</h3>
+        <p>Meadow planting, pollinator corridors, and the beauty of native blooms that sustain insects and birds.</p>
+        <div class="category-meta">
+          <span class="pill">8 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="category-card">
+        <div class="category-icon">🥬</div>
+        <h3>Kitchen Gardens</h3>
+        <p>Practical guides for growing vegetables, herbs, and edible flowers — from raised beds to container harvests.</p>
+        <div class="category-meta">
+          <span class="pill">15 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 4 -->
+      <div class="category-card">
+        <div class="category-icon">🌳</div>
+        <h3>Woodland & Orchard</h3>
+        <p>Tree care, forest gardening, fruit varieties, and the quiet wisdom of orchards and wood pastures.</p>
+        <div class="category-meta">
+          <span class="pill">6 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 5 -->
+      <div class="category-card">
+        <div class="category-icon">🌾</div>
+        <h3>Soil & Compost</h3>
+        <p>Living soil, compost science, mulching, and the alchemy of turning waste into garden gold.</p>
+        <div class="category-meta">
+          <span class="pill">10 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 6 -->
+      <div class="category-card">
+        <div class="category-icon">🌺</div>
+        <h3>Medicinal Herbs</h3>
+        <p>Traditional herbalism, growing remedies, and the intersection of garden and apothecary.</p>
+        <div class="category-meta">
+          <span class="pill">7 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 7 -->
+      <div class="category-card">
+        <div class="category-icon">🐝</div>
+        <h3>Beekeeping</h3>
+        <p>Gentle apiculture, hive management, and the essential role of bees in the garden ecosystem.</p>
+        <div class="category-meta">
+          <span class="pill">5 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 8 -->
+      <div class="category-card">
+        <div class="category-icon">🌼</div>
+        <h3>Seasonal Almanac</h3>
+        <p>Monthly garden tasks, weather lore, and the rhythm of the seasons in the temperate garden.</p>
+        <div class="category-meta">
+          <span class="pill">9 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+      <!-- card 9 -->
+      <div class="category-card">
+        <div class="category-icon">📖</div>
+        <h3>Garden Literature</h3>
+        <p>Book reviews, essays, and reflections from garden writers, poets, and philosophers of the soil.</p>
+        <div class="category-meta">
+          <span class="pill">4 articles</span>
+          <a href="#">read</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Untouched <i>Earth</i></div>
+          <p>Gardens of origin — a digital publication for the thoughtful gardener. We explore traditional knowledge, ecological design, and the quiet art of tending.</p>
+          <p style="margin-top:0.6rem; font-size:0.8rem;">© 2026 Untouched Earth · all rights reserved</p>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <a href="#">Field guide</a>
+          <a href="#">Stories</a>
+          <a href="#">Library</a>
+          <a href="#">Archive</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <a href="#">Categories</a>
+          <a href="#">Authors</a>
+          <a href="#">FAQ</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Editorial policy</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookie policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>Untouched Earth is an independent authority on regenerative gardening and horticultural heritage.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
